@@ -28,7 +28,8 @@ def groupPlotBar(data_values, legends, label_groups, x_name="X Axis", y_name="Y 
   
   # Add xticks on the middle of the group bars
   if(num_bar%2 != 0):
-    plt.xticks([r + barWidth for r in range(num_plot)], label_groups)
+    pos_label_groups = x_bar_locs[(num_bar//2)]
+    plt.xticks([r for r in pos_label_groups ], label_groups)
   else:
     pos_label_groups = x_bar_locs[(num_bar//2)]
     plt.xticks([r-(barWidth/2) for r in pos_label_groups ], label_groups)
